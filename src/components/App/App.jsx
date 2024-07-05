@@ -11,11 +11,12 @@ function App() {
   });
 
   const updateFeedback = (feedbackType) => {
-    setFeedback((prevFeedback) => ({
-      ...prevFeedback,
-      [feedbackType]: prevFeedback[feedbackType] + 1,
+    setFeedback((countFeedback) => ({
+      ...countFeedback,
+      [feedbackType]: countFeedback[feedbackType] + 1,
     }));
   };
+const 
 
   return (
     <div className="App">
@@ -24,6 +25,7 @@ function App() {
         Please leave your feedback about our service by selecting one of the
         options below.
       </p>
+
       <Options updateFeedback={updateFeedback} />
       <Feedbacks feedback={feedback} />
     </div>
