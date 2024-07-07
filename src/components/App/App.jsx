@@ -5,11 +5,15 @@ import Notification from "../Notification/Notification";
 import Description from "../Description/Description";
 
 function App() {
-  const [feedback, setFeedback] = useState({
+  const initialFeedback = JSON.parse(
+    localStorage.getItem("feedbackStatistic")
+  ) || {
     good: 0,
     neutral: 0,
     bad: 0,
-  });
+  };
+
+  const [feedback, setFeedback] = useState(initialFeedback);
 
   const updateFeedback = (feedbackType) => {
     setFeedback((countFeedback) => ({
@@ -32,10 +36,8 @@ function App() {
     totalFeedback > 0 ? Math.round((feedback.good / totalFeedback) * 100) : 0;
 
   useEffect(() => {
-    localStorage.setItem("feedbackStatistic", JSON.stringify({ feedback }), [
-      feedback,
-    ]);
-  });
+    localStorage.setItem("feedbackStatistic", JSON.stringify(feedback));
+  }, [feedback]);
 
   return (
     <div className="App">
