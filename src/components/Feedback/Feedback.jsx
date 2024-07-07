@@ -1,4 +1,4 @@
-const Feedbacks = ({ feedback, positiveFeedback, totalFeedback }) => {
+const Feedback = ({ feedback, positiveFeedback, totalFeedback }) => {
   return (
     <div>
       <p>Good: {feedback.good}</p>
@@ -10,4 +10,4 @@ const Feedbacks = ({ feedback, positiveFeedback, totalFeedback }) => {
   );
 };
 
-export default Feedbacks;
+export default Feedback;

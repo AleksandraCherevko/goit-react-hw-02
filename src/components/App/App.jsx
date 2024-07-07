@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import Options from "../Options/Options";
-import Feedbacks from "../Feedbacks/Feedbacks";
+import Feedback from "../Feedback/Feedback";
 import Notification from "../Notification/Notification";
 import Description from "../Description/Description";
 
@@ -46,7 +46,7 @@ function App() {
         totalFeedback={totalFeedback}
       />
       {totalFeedback > 0 ? (
-        <Feedbacks
+        <Feedback
           feedback={feedback}
           positiveFeedback={positiveFeedback}
           totalFeedback={totalFeedback}
